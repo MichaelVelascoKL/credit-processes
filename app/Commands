@@ -1,0 +1,5 @@
+TO START FAKE SMTP: 
+- Enter into folder of project
+- run this command: java --add-exports java.desktop/com.apple.eawt=ALL-UNNAMED -jar fakeSMTP-2.0.jar
+- click on "start server" button
+
