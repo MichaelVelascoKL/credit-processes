@@ -36,6 +36,13 @@
       <elements xmi:type="process:Lane" xmi:id="_BZNZMGxFEe6LhMIMQ2gwew" name="director" actor="_5slMQGxmEe6rfr51zcw3AQ"/>
       <elements xmi:type="process:Lane" xmi:id="_HgQP8GxFEe6LhMIMQ2gwew" name="asesor" actor="_6hRYkGxmEe6rfr51zcw3AQ"/>
       <elements xmi:type="process:Lane" xmi:id="_OIWlUGxFEe6LhMIMQ2gwew" name="cajero" actor="_7NpWYGxmEe6rfr51zcw3AQ"/>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_5D9SoG3-Ee606p7FAzRilw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_PxGY8G3_Ee606p7FAzRilw" name="initBusinessObject()" content="def businessObjectVar = new com.company.model.BusinessObject()&#xA;def processInstance = apiAccessor.processAPI.getProcessInstance(processInstanceId);&#xA;&#xA;businessObjectVar.id = processInstance.startedBy&#xA;businessObjectVar.typeOfIdentification = businessObjectInput?.typeOfIdentification&#xA;businessObjectVar.identification = businessObjectInput?.identification&#xA;businessObjectVar.firstName = businessObjectInput?.firstName&#xA;businessObjectVar.lastName = businessObjectInput?.lastName&#xA;businessObjectVar.amountRequested = businessObjectInput?.amountRequested?.toFloat()&#xA;businessObjectVar.totalIncome = businessObjectInput?.totalIncome?.toFloat()&#xA;businessObjectVar.fixedExpenses = businessObjectInput?.fixedExpenses?.toFloat()&#xA;&#xA;return businessObjectVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.BusinessObject">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_qR7MQG3_Ee606p7FAzRilw" name="businessObjectInput" type="COMPLEX"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_qR8aYG3_Ee606p7FAzRilw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_qR8aYW3_Ee606p7FAzRilw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+        </defaultValue>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_fhiJo2xDEe6LhMIMQ2gwew">
         <targetForm xmi:type="expression:Expression" xmi:id="_S0exwG38Ee606p7FAzRilw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
@@ -57,7 +64,35 @@
       <actors xmi:type="process:Actor" xmi:id="_5slMQGxmEe6rfr51zcw3AQ" name="Director"/>
       <actors xmi:type="process:Actor" xmi:id="_6hRYkGxmEe6rfr51zcw3AQ" name="Adviser"/>
       <actors xmi:type="process:Actor" xmi:id="_7NpWYGxmEe6rfr51zcw3AQ" name="cashier"/>
-      <contract xmi:type="process:Contract" xmi:id="_fhiJq2xDEe6LhMIMQ2gwew"/>
+      <contract xmi:type="process:Contract" xmi:id="_fhiJq2xDEe6LhMIMQ2gwew">
+        <inputs xmi:type="process:ContractInput" xmi:id="_Pw8A4G3_Ee606p7FAzRilw" name="businessObjectInput" type="COMPLEX" dataReference="businessObject">
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PAG3_Ee606p7FAzRilw" name="typeOfIdentification"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PAW3_Ee606p7FAzRilw" name="identification"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PAm3_Ee606p7FAzRilw" name="firstName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PA23_Ee606p7FAzRilw" name="lastName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PBG3_Ee606p7FAzRilw" name="amountRequested" type="DECIMAL"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PBW3_Ee606p7FAzRilw" name="totalIncome" type="DECIMAL"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Pw9PBm3_Ee606p7FAzRilw" name="fixedExpenses" type="DECIMAL"/>
+        </inputs>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8sG3_Ee606p7FAzRilw" expression="businessObjectInput?.typeOfIdentification != null" errorMessage="typeOfIdentification is mandatory for BusinessObject" name="mandatory_businessObjectInput_typeOfIdentification">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8sW3_Ee606p7FAzRilw" expression="businessObjectInput?.identification != null" errorMessage="identification is mandatory for BusinessObject" name="mandatory_businessObjectInput_identification">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8sm3_Ee606p7FAzRilw" expression="businessObjectInput?.firstName != null" errorMessage="firstName is mandatory for BusinessObject" name="mandatory_businessObjectInput_firstName">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8s23_Ee606p7FAzRilw" expression="businessObjectInput?.amountRequested != null" errorMessage="amountRequested is mandatory for BusinessObject" name="mandatory_businessObjectInput_amountRequested">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8tG3_Ee606p7FAzRilw" expression="businessObjectInput?.totalIncome != null" errorMessage="totalIncome is mandatory for BusinessObject" name="mandatory_businessObjectInput_totalIncome">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_PxD8tW3_Ee606p7FAzRilw" expression="businessObjectInput?.fixedExpenses != null" errorMessage="fixedExpenses is mandatory for BusinessObject" name="mandatory_businessObjectInput_fixedExpenses">
+          <inputNames>businessObjectInput</inputNames>
+        </constraints>
+      </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_fhiJrGxDEe6LhMIMQ2gwew">
         <name xmi:type="expression:Expression" xmi:id="_fhiJrWxDEe6LhMIMQ2gwew" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_fhiJrmxDEe6LhMIMQ2gwew" content="" returnTypeFixed="true"/>

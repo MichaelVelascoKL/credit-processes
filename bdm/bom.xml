@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="8.0.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.BusinessObject">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="typeOfIdentification" nullable="false" collection="false">
+                    <description>Tipo de identificación</description>
+                </field>
+                <field type="STRING" length="255" name="identification" nullable="false" collection="false">
+                    <description>Número de Identificacón</description>
+                </field>
+                <field type="STRING" length="255" name="firstName" nullable="false" collection="false">
+                    <description>Nombres</description>
+                </field>
+                <field type="STRING" length="255" name="lastName" nullable="true" collection="false">
+                    <description>Apellidos</description>
+                </field>
+                <field type="FLOAT" length="255" name="amountRequested" nullable="false" collection="false">
+                    <description>Monto Solicitado</description>
+                </field>
+                <field type="FLOAT" length="255" name="totalIncome" nullable="false" collection="false">
+                    <description>Ingresos Totales</description>
+                </field>
+                <field type="FLOAT" length="255" name="fixedExpenses" nullable="false" collection="false">
+                    <description>Gastos Fijos</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
