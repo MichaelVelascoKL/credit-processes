@@ -25,6 +25,7 @@
                 <field type="FLOAT" length="255" name="fixedExpenses" nullable="false" collection="false">
                     <description>Gastos Fijos</description>
                 </field>
+                <field type="BOOLEAN" length="255" name="ValidFiles" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
