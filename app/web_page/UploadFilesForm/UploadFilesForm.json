@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "b5666709-5f11-4193-83e6-919df3e93086",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1698355131943,
+  "lastUpdate" : 1698356353736,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -2025,7 +2025,7 @@
         "\t\t\tamountRequested: $data.businessObject.amountRequested !== undefined ? $data.businessObject.amountRequested : null,",
         "\t\t\ttotalIncome: $data.businessObject.totalIncome !== undefined ? $data.businessObject.totalIncome : null,",
         "\t\t\tfixedExpenses: $data.businessObject.fixedExpenses !== undefined ? $data.businessObject.fixedExpenses : null,",
-        "\t\t\tValidFiles: $data.businessObject.ValidFiles !== undefined ? $data.businessObject.ValidFiles : null",
+        "\t\t\tvalidFiles: $data.businessObject.ValidFiles !== undefined ? $data.businessObject.ValidFiles : null",
         "\t\t}",
         "\t}",
         "}"
@@ -2080,7 +2080,7 @@
     "enabledDisabled" : {
       "type" : "expression",
       "value" : [
-        "return $data.businessObject.ValidFiles === null;"
+        "return $data.businessObject.validFiles === null;"
       ],
       "exposed" : false
     }

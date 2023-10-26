@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "50f2259f-f408-4f24-8275-19c46611447d",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1698351750068,
+  "lastUpdate" : 1698356237231,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -912,7 +912,7 @@
       "value" : [
         "return {",
         "    validFiles: {",
-        "    \tValidFiles: true",
+        "    \tvalidFiles: true",
         "    }",
         "}"
       ],
@@ -923,7 +923,7 @@
       "value" : [
         "return {",
         "    validFiles: {",
-        "    \tValidFiles: false",
+        "    \tvalidFiles: false",
         "    }",
         "}"
       ],
