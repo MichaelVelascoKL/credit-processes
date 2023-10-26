@@ -8,10 +8,10 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_fhiJlGxDEe6LhMIMQ2gwew" name="Registro de la información y documentos del cliente" content="Registro de la información y documentos del cliente" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_fhiJlWxDEe6LhMIMQ2gwew" name="Registro satisfactorio" content="Registro satisfactorio" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_3L9ngG4EEe606p7FAzRilw" name="Validación Datos y Registro de Documentos" outgoing="_2YdG8G4EEe606p7FAzRilw" incoming="_1xAscG4EEe606p7FAzRilw _jR-0wHQ4Ee6NjpAoJmIccw" overrideActorsOfTheLane="false">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_1wz4IW4EEe606p7FAzRilw" name="Registro de Documentos" content="Registro de Documentos" returnTypeFixed="true"/>
+        <elements xmi:type="process:Task" xmi:id="_3L9ngG4EEe606p7FAzRilw" name="Validación - Registro de Datos y/o Documentos" outgoing="_2YdG8G4EEe606p7FAzRilw" incoming="_1xAscG4EEe606p7FAzRilw _jR-0wHQ4Ee6NjpAoJmIccw" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_1wz4IW4EEe606p7FAzRilw" name="Validación - Registro de Datos y/o Documentos" content="Validación - Registro de Datos y/o Documentos" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_1wz4IG4EEe606p7FAzRilw" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_1wz4Im4EEe606p7FAzRilw" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_1wz4Im4EEe606p7FAzRilw" name="Validación realizada" content="Validación realizada" returnTypeFixed="true"/>
           <operations xmi:type="expression:Operation" xmi:id="_ouV5YHEPEe6pX-8tUtH-xQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_ouV5YXEPEe6pX-8tUtH-xQ" name="laborCertificate" content="laborCertificate" type="DOCUMENT_REF_TYPE">
               <referencedElements xmi:type="process:Document" xmi:id="_pgGtgHEPEe6pX-8tUtH-xQ" name="laborCertificate"/>
@@ -67,13 +67,101 @@
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_EIBnU3EQEe6pX-8tUtH-xQ" type="DOCUMENT_CREATE_UPDATE"/>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOcHQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOcXQ9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOcnQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOc3Q9Ee6NjpAoJmIccw" name="businessObjectInput.typeOfIdentification" content="businessObjectInput?.typeOfIdentification" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOdHQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOdXQ9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setTypeOfIdentification">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOdnQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOd3Q9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOeHQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOeXQ9Ee6NjpAoJmIccw" name="businessObjectInput.identification" content="businessObjectInput?.identification" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOenQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOe3Q9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setIdentification">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOfHQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOfXQ9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOfnQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOf3Q9Ee6NjpAoJmIccw" name="businessObjectInput.firstName" content="businessObjectInput?.firstName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOgHQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOgXQ9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setFirstName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOgnQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOg3Q9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOhHQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOhXQ9Ee6NjpAoJmIccw" name="businessObjectInput.lastName" content="businessObjectInput?.lastName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOhnQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOh3Q9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setLastName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOiHQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOiXQ9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOinQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOi3Q9Ee6NjpAoJmIccw" name="businessObjectInput.amountRequested" content="businessObjectInput?.amountRequested?.toFloat()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Float">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOjHQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOjXQ9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setAmountRequested">
+              <inputTypes>java.lang.Float</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOjnQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOj3Q9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOkHQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOkXQ9Ee6NjpAoJmIccw" name="businessObjectInput.totalIncome" content="businessObjectInput?.totalIncome?.toFloat()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Float">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOknQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOk3Q9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setTotalIncome">
+              <inputTypes>java.lang.Float</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOlHQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOlXQ9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOlnQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOl3Q9Ee6NjpAoJmIccw" name="businessObjectInput.fixedExpenses" content="businessObjectInput?.fixedExpenses?.toFloat()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Float">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOmHQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOmXQ9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setFixedExpenses">
+              <inputTypes>java.lang.Float</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_9JtOmnQ9Ee6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_9JtOm3Q9Ee6NjpAoJmIccw" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9JtOnHQ9Ee6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_9JtOnXQ9Ee6NjpAoJmIccw" name="businessObjectInput.ValidFiles" content="businessObjectInput?.ValidFiles" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_9JtOnnQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_9JtOn3Q9Ee6NjpAoJmIccw" type="JAVA_METHOD" expression="setValidFiles">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_1wz4I24EEe606p7FAzRilw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_1wz4JG4EEe606p7FAzRilw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_1wz4JW4EEe606p7FAzRilw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_1wz4J24EEe606p7FAzRilw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_1wz4Jm4EEe606p7FAzRilw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_3MB4924EEe606p7FAzRilw">
-            <targetForm xmi:type="expression:Expression" xmi:id="_-aqxAHEREe6pX-8tUtH-xQ" name="UploadFilesForm" content="b5666709-5f11-4193-83e6-919df3e93086" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_19jiEHRDEe6NjpAoJmIccw" name="UploadFilesForm" content="b5666709-5f11-4193-83e6-919df3e93086" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_3MB49m4EEe606p7FAzRilw">
             <inputs xmi:type="process:ContractInput" xmi:id="_86sI0HENEe6pX-8tUtH-xQ" name="laborCertificate" type="FILE">
@@ -91,6 +179,34 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_ZUbJEHEPEe6pX-8tUtH-xQ" name="accountingCertificate" type="FILE">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_ZUbJEXEPEe6pX-8tUtH-xQ"/>
             </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_9JmgwHQ9Ee6NjpAoJmIccw" name="businessObjectInput" type="COMPLEX" dataReference="businessObject" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH0HQ9Ee6NjpAoJmIccw" name="typeOfIdentification" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH0XQ9Ee6NjpAoJmIccw" name="identification" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH0nQ9Ee6NjpAoJmIccw" name="firstName" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH03Q9Ee6NjpAoJmIccw" name="lastName" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH1HQ9Ee6NjpAoJmIccw" name="amountRequested" type="DECIMAL" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH1XQ9Ee6NjpAoJmIccw" name="totalIncome" type="DECIMAL" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH1nQ9Ee6NjpAoJmIccw" name="fixedExpenses" type="DECIMAL" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_9JnH13Q9Ee6NjpAoJmIccw" name="ValidFiles" type="BOOLEAN" createMode="false"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLIHQ9Ee6NjpAoJmIccw" expression="businessObjectInput?.typeOfIdentification != null" errorMessage="typeOfIdentification is mandatory for BusinessObject" name="mandatory_businessObjectInput_typeOfIdentification">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLIXQ9Ee6NjpAoJmIccw" expression="businessObjectInput?.identification != null" errorMessage="identification is mandatory for BusinessObject" name="mandatory_businessObjectInput_identification">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLInQ9Ee6NjpAoJmIccw" expression="businessObjectInput?.firstName != null" errorMessage="firstName is mandatory for BusinessObject" name="mandatory_businessObjectInput_firstName">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLI3Q9Ee6NjpAoJmIccw" expression="businessObjectInput?.amountRequested != null" errorMessage="amountRequested is mandatory for BusinessObject" name="mandatory_businessObjectInput_amountRequested">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLJHQ9Ee6NjpAoJmIccw" expression="businessObjectInput?.totalIncome != null" errorMessage="totalIncome is mandatory for BusinessObject" name="mandatory_businessObjectInput_totalIncome">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_9JqLJXQ9Ee6NjpAoJmIccw" expression="businessObjectInput?.fixedExpenses != null" errorMessage="fixedExpenses is mandatory for BusinessObject" name="mandatory_businessObjectInput_fixedExpenses">
+              <inputNames>businessObjectInput</inputNames>
+            </constraints>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_3MB4-W4EEe606p7FAzRilw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>

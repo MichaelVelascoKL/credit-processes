@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "066e8a46-d47a-4a92-a5ee-776bda2c0b73",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1697666383313,
+  "lastUpdate" : 1698354057536,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -453,7 +453,8 @@
                           "value" : "Nombres"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Nombres Completos"
                         },
                         "type" : {
                           "type" : "constant",
@@ -599,7 +600,8 @@
                           "value" : "Apellidos"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Apelldios Completos"
                         },
                         "type" : {
                           "type" : "constant",
@@ -734,7 +736,7 @@
                         },
                         "labelWidth" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : 4
                         },
                         "readOnly" : {
                           "type" : "constant",
@@ -782,7 +784,7 @@
                         },
                         "min" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : 0
                         },
                         "max" : {
                           "type" : "constant"
@@ -882,7 +884,7 @@
                         },
                         "labelWidth" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : 4
                         },
                         "readOnly" : {
                           "type" : "constant",
@@ -930,7 +932,7 @@
                         },
                         "min" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : 0
                         },
                         "max" : {
                           "type" : "constant"
@@ -1030,7 +1032,7 @@
                         },
                         "labelWidth" : {
                           "type" : "constant",
-                          "value" : 1
+                          "value" : 4
                         },
                         "readOnly" : {
                           "type" : "constant",
