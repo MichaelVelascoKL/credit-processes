@@ -298,17 +298,43 @@
               <inputTypes>java.lang.Boolean</inputTypes>
             </operator>
           </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PCDdIHRLEe6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PCEEMHRLEe6NjpAoJmIccw" name="riskStudy" content="riskStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PCEEMXRLEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PCEEMnRLEe6NjpAoJmIccw" name="riskStudyInput.riskState" content="riskStudyInput?.riskState" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PCEEM3RLEe6NjpAoJmIccw" name="riskStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PCErQHRLEe6NjpAoJmIccw" type="JAVA_METHOD" expression="setRiskState">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PCErQXRLEe6NjpAoJmIccw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PCErQnRLEe6NjpAoJmIccw" name="riskStudy" content="riskStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PCErQ3RLEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PCErRHRLEe6NjpAoJmIccw" name="riskStudyInput.reason" content="riskStudyInput?.reason" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PCErRXRLEe6NjpAoJmIccw" name="riskStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PCErRnRLEe6NjpAoJmIccw" type="JAVA_METHOD" expression="setReason">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_fhiJmmxDEe6LhMIMQ2gwew" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_fhiJm2xDEe6LhMIMQ2gwew" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_fhiJnGxDEe6LhMIMQ2gwew" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_fhiJnWxDEe6LhMIMQ2gwew" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_fhiJnmxDEe6LhMIMQ2gwew" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_fhiJn2xDEe6LhMIMQ2gwew">
-            <targetForm xmi:type="expression:Expression" xmi:id="_wFjjAHQ6Ee6NjpAoJmIccw" name="ValidBaseRequestForm" content="50f2259f-f408-4f24-8275-19c46611447d" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_b7qz4HRLEe6NjpAoJmIccw" name="ValidBaseRequestForm" content="50f2259f-f408-4f24-8275-19c46611447d" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_fhiJoWxDEe6LhMIMQ2gwew">
             <inputs xmi:type="process:ContractInput" xmi:id="_crVWUHEWEe6pX-8tUtH-xQ" name="validFiles" type="COMPLEX" dataReference="businessObject" createMode="false">
               <inputs xmi:type="process:ContractInput" xmi:id="_crVWUXEWEe6pX-8tUtH-xQ" name="validFiles" type="BOOLEAN" createMode="false"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_PB8vcHRLEe6NjpAoJmIccw" name="riskStudyInput" type="COMPLEX" dataReference="riskStudy" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_PB99kHRLEe6NjpAoJmIccw" name="riskState" type="BOOLEAN" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PB99kXRLEe6NjpAoJmIccw" name="reason" createMode="false"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_fhiJomxDEe6LhMIMQ2gwew" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -318,13 +344,19 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Go-NYGxrEe6QvbwvjYAArA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Go-0cWxrEe6QvbwvjYAArA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:XORGateway" xmi:id="_edEPIHEVEe6pX-8tUtH-xQ" name="Estudio Válido?" outgoing="_QEdx4HEVEe6pX-8tUtH-xQ _SJAcgHEVEe6pX-8tUtH-xQ" incoming="_PC9RkHEVEe6pX-8tUtH-xQ">
+        <elements xmi:type="process:XORGateway" xmi:id="_edEPIHEVEe6pX-8tUtH-xQ" name="Estudio Válido?" outgoing="_QEdx4HEVEe6pX-8tUtH-xQ _SJAcgHEVEe6pX-8tUtH-xQ _Z6v5cHRVEe6NjpAoJmIccw" incoming="_PC9RkHEVEe6pX-8tUtH-xQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_PCpIgHEVEe6pX-8tUtH-xQ" name="Estudio Válido?" content="Estudio Válido?" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_PCohcHEVEe6pX-8tUtH-xQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_PCpIgXEVEe6pX-8tUtH-xQ" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_VQh-YGxEEe6LhMIMQ2gwew" name="analista financiero" actor="_397SEGxmEe6rfr51zcw3AQ"/>
+      <elements xmi:type="process:Lane" xmi:id="_VQh-YGxEEe6LhMIMQ2gwew" name="analista financiero" actor="_397SEGxmEe6rfr51zcw3AQ">
+        <elements xmi:type="process:EndEvent" xmi:id="_Z6QxQHRVEe6NjpAoJmIccw" name="End2" incoming="_Z6v5cHRVEe6NjpAoJmIccw">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Z6aiQHRVEe6NjpAoJmIccw" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Z6Z7MHRVEe6NjpAoJmIccw" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_Z6aiQXRVEe6NjpAoJmIccw" name="" content="" returnTypeFixed="true"/>
+        </elements>
+      </elements>
       <elements xmi:type="process:Lane" xmi:id="_6UuCwGxEEe6LhMIMQ2gwew" name="abogado" actor="_43ewQGxmEe6rfr51zcw3AQ"/>
       <elements xmi:type="process:Lane" xmi:id="_BZNZMGxFEe6LhMIMQ2gwew" name="director" actor="_5slMQGxmEe6rfr51zcw3AQ"/>
       <elements xmi:type="process:Lane" xmi:id="_HgQP8GxFEe6LhMIMQ2gwew" name="asesor" actor="_6hRYkGxmEe6rfr51zcw3AQ"/>
@@ -335,6 +367,9 @@
           <referencedElements xmi:type="expression:Expression" xmi:id="_qR8aYG3_Ee606p7FAzRilw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
           <referencedElements xmi:type="expression:Expression" xmi:id="_qR8aYW3_Ee606p7FAzRilw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
         </defaultValue>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_97LbwHRKEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_97Mp4HRKEe6NjpAoJmIccw" name="init_riskStudy()" content="def businessObjectVar = new com.company.model.RiskStudy();&#xA;&#xA;businessObjectVar.riskState = false;&#xA;businessObjectVar.reason = &quot;Sin Comentarios.&quot;&#xA;&#xA;return businessObjectVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.RiskStudy"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_fhiJo2xDEe6LhMIMQ2gwew">
         <targetForm xmi:type="expression:Expression" xmi:id="_ewvV4nEREe6pX-8tUtH-xQ" name="ApplicationRegistration" content="066e8a46-d47a-4a92-a5ee-776bda2c0b73" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -354,19 +389,25 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_PC94oHEVEe6pX-8tUtH-xQ"/>
         <condition xmi:type="expression:Expression" xmi:id="_ePMyQXEVEe6pX-8tUtH-xQ" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_QEdx4HEVEe6pX-8tUtH-xQ" name="No Válido" target="_lU9ZIHQ4Ee6NjpAoJmIccw" source="_edEPIHEVEe6pX-8tUtH-xQ" isDefault="true">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_QEdx4HEVEe6pX-8tUtH-xQ" name="Devuelto" target="_lU9ZIHQ4Ee6NjpAoJmIccw" source="_edEPIHEVEe6pX-8tUtH-xQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_QEfnEHEVEe6pX-8tUtH-xQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_ePLkIHEVEe6pX-8tUtH-xQ" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_SJAcgHEVEe6pX-8tUtH-xQ" name="Válido" target="_GozOQGxrEe6QvbwvjYAArA" source="_edEPIHEVEe6pX-8tUtH-xQ">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_SJHKMHEVEe6pX-8tUtH-xQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_ePMyQHEVEe6pX-8tUtH-xQ" name="newScript()" content="return businessObject.validFiles === true;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_5pLicHRHEe6NjpAoJmIccw" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ePLkIHEVEe6pX-8tUtH-xQ" name="newScript()" content="return riskStudy?.riskState === null" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_uupmMHRVEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
         </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_SJAcgHEVEe6pX-8tUtH-xQ" name="Rechazado" target="_GozOQGxrEe6QvbwvjYAArA" source="_edEPIHEVEe6pX-8tUtH-xQ" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_SJHKMHEVEe6pX-8tUtH-xQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ePMyQHEVEe6pX-8tUtH-xQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_jR-0wHQ4Ee6NjpAoJmIccw" target="_3L9ngG4EEe606p7FAzRilw" source="_lU9ZIHQ4Ee6NjpAoJmIccw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_jSDGMHQ4Ee6NjpAoJmIccw"/>
         <condition xmi:type="expression:Expression" xmi:id="_jSDtQHQ4Ee6NjpAoJmIccw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_Z6v5cHRVEe6NjpAoJmIccw" name="Aprobado" target="_Z6QxQHRVEe6NjpAoJmIccw" source="_edEPIHEVEe6pX-8tUtH-xQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Z6xuoHRVEe6NjpAoJmIccw"/>
+        <condition xmi:type="expression:Expression" xmi:id="_Z6xuoXRVEe6NjpAoJmIccw" name="newScript()" content="return riskStudy?.riskState === true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rdsLwHRVEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
+        </condition>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_fhiJqmxDEe6LhMIMQ2gwew" name="Office Advisor" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_sohgEGxmEe6rfr51zcw3AQ" name="Risk analyst"/>
@@ -503,7 +544,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_edE2M3EVEe6pX-8tUtH-xQ" type="3008" element="_edEPIHEVEe6pX-8tUtH-xQ" fontName=".AppleSystemUIFont">
               <children xmi:type="notation:DecorationNode" xmi:id="_edFdQHEVEe6pX-8tUtH-xQ" type="5026">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_edFdQXEVEe6pX-8tUtH-xQ" y="5"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_edFdQXEVEe6pX-8tUtH-xQ" x="-47" y="-38"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_edE2NHEVEe6pX-8tUtH-xQ" x="301" y="39" width="43" height="43"/>
             </children>
@@ -516,7 +557,14 @@
         </children>
         <children xmi:type="notation:Node" xmi:id="_VQxO8GxEEe6LhMIMQ2gwew" type="3007" element="_VQh-YGxEEe6LhMIMQ2gwew">
           <children xmi:type="notation:DecorationNode" xmi:id="_VQ1gYGxEEe6LhMIMQ2gwew" type="5007"/>
-          <children xmi:type="notation:DecorationNode" xmi:id="_VQ2HcGxEEe6LhMIMQ2gwew" type="7002"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_VQ2HcGxEEe6LhMIMQ2gwew" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_Z6gB0HRVEe6NjpAoJmIccw" type="3003" element="_Z6QxQHRVEe6NjpAoJmIccw" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_Z6k6UHRVEe6NjpAoJmIccw" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Z6lhYHRVEe6NjpAoJmIccw" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z6hP8HRVEe6NjpAoJmIccw" x="308" y="35"/>
+            </children>
+          </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_VQx2AGxEEe6LhMIMQ2gwew"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_VQx2AWxEEe6LhMIMQ2gwew" fontName=".AppleSystemUIFont"/>
           <styles xmi:type="notation:LineStyle" xmi:id="_VQx2AmxEEe6LhMIMQ2gwew"/>
@@ -613,6 +661,13 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jSH-sXQ4Ee6NjpAoJmIccw" points="[-100, -6, 30, -14]$[-128, -6, 2, -14]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jSUzAHQ4Ee6NjpAoJmIccw" id="(1.0,0.56)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a2mHYHQ5Ee6NjpAoJmIccw" id="(0.9916666666666667,0.6666666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Z6zj0HRVEe6NjpAoJmIccw" type="4001" element="_Z6v5cHRVEe6NjpAoJmIccw" source="_edE2M3EVEe6pX-8tUtH-xQ" target="_Z6gB0HRVEe6NjpAoJmIccw" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Z60x8HRVEe6NjpAoJmIccw" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Z60x8XRVEe6NjpAoJmIccw" x="-27" y="-28"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Z6zj0XRVEe6NjpAoJmIccw" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Z6zj0nRVEe6NjpAoJmIccw" points="[0, 22, -1, -103]$[0, 110, -1, -15]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

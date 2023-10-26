@@ -31,5 +31,18 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.RiskStudy">
+            <fields>
+                <field type="BOOLEAN" length="255" name="riskState" nullable="true" collection="false">
+                    <description>null: Devuelto
+true: Aprobado
+false: Rechazado</description>
+                </field>
+                <field type="STRING" length="255" name="reason" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
     </businessObjects>
 </businessObjectModel>

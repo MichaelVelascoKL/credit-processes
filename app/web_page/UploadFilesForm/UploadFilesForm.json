@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "b5666709-5f11-4193-83e6-919df3e93086",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1698356353736,
+  "lastUpdate" : 1698361466358,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -2080,7 +2080,14 @@
     "enabledDisabled" : {
       "type" : "expression",
       "value" : [
-        "return $data.businessObject.validFiles === null;"
+        "return $data.riskStudy.riskState !== null;"
+      ],
+      "exposed" : false
+    },
+    "riskStudy" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.riskStudy_ref.link}}"
       ],
       "exposed" : false
     }
