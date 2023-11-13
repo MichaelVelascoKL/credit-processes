@@ -64,5 +64,23 @@ false: Rechazado</description>
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.TaxStudy">
+            <fields>
+                <field type="STRING" length="255" name="entityTaxStudy" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="resultTaxStudy" nullable="true" collection="false">
+                    <description>true: Al día
+false: Atrasado</description>
+                </field>
+                <field type="BOOLEAN" length="255" name="statusTaxStudy" nullable="true" collection="false">
+                    <description>true: Aprobado
+false: rechazado
+null: devuelto</description>
+                </field>
+                <field type="STRING" length="255" name="reasonTaxStudy" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
     </businessObjects>
 </businessObjectModel>
