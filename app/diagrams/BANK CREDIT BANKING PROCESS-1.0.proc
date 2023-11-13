@@ -358,7 +358,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Z6Z7MHRVEe6NjpAoJmIccw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Z6aiQXRVEe6NjpAoJmIccw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_y3OBAHdpEe6erpAD8mPVsg" documentation="Como analista financiero hago un estudio con interno para saber si tiene anotaciones" name="Analista Financiero" outgoing="_yAJHsHdsEe6erpAD8mPVsg" incoming="_Z6v5cHRVEe6NjpAoJmIccw" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_y3OBAHdpEe6erpAD8mPVsg" documentation="Como analista financiero hago un estudio con interno para saber si tiene anotaciones" name="Estudio Interno" outgoing="_yAJHsHdsEe6erpAD8mPVsg" incoming="_Z6v5cHRVEe6NjpAoJmIccw" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_y36kkHdpEe6erpAD8mPVsg" name="Análisis Financiero" content="Análisis Financiero" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_y359gHdpEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_y37LoHdpEe6erpAD8mPVsg" name="descriptionAfterCompletion()" content="return internalStudy?.reason" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
@@ -478,9 +478,206 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_x_tp4HdsEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_x_u4AXdsEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:Task" xmi:id="_1HE80IHHEe6r_6YB-6bR9g" documentation="Como analista financiero hago una consulta a centrales de riesgo (Datacrédito y CIFIN) para saber&#xA;la calificación" name="Consulta a centrales de riesgo" outgoing="_GHHWYIHIEe6r_6YB-6bR9g" incoming="_bRw10HdtEe6erpAD8mPVsg" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_1HX3wIHHEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_1HXQsIHHEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_1HX3wYHHEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_Y9piEIHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Y9qJIIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" content="datacreditoRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Y9qJIYHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Y9qJIoHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput.nameRiskCentral" content="datacreditoRiskCenterStudyInput?.nameRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Y9qJI4HJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Y9qJJIHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setNameRiskCentral">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Y9qJJYHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Y9qJJoHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" content="datacreditoRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Y9qJJ4HJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Y9qJKIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput.qualificationRiskCentral" content="datacreditoRiskCenterStudyInput?.qualificationRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Y9qJKYHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Y9qJKoHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setQualificationRiskCentral">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Y9qJK4HJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Y9qJLIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" content="datacreditoRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Y9qJLYHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Y9qJLoHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput.statusRiskCentral" content="datacreditoRiskCenterStudyInput?.statusRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Y9qJL4HJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Y9qJMIHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setStatusRiskCentral">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Y9qJMYHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Y9qJMoHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" content="datacreditoRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Y9qJM4HJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Y9qJNIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput.reasonRiskCentral" content="datacreditoRiskCenterStudyInput?.reasonRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Y9qJNYHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Y9qJNoHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setReasonRiskCentral">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Z8DrEIHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z8DrEYHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" content="cifinRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z8DrEoHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z8DrE4HJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput.nameRiskCentral" content="cifinRiskCenterStudyInput?.nameRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z8DrFIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Z8DrFYHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setNameRiskCentral">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Z8DrFoHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z8DrF4HJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" content="cifinRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z8DrGIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z8DrGYHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput.qualificationRiskCentral" content="cifinRiskCenterStudyInput?.qualificationRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z8DrGoHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Z8DrG4HJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setQualificationRiskCentral">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Z8DrHIHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z8DrHYHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" content="cifinRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z8DrHoHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z8DrH4HJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput.statusRiskCentral" content="cifinRiskCenterStudyInput?.statusRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z8DrIIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Z8DrIYHJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setStatusRiskCentral">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_Z8DrIoHJEe6r_6YB-6bR9g">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_Z8DrI4HJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" content="cifinRiskCenterStudy" type="TYPE_VARIABLE" returnType="com.company.model.RiskCenterStudy">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z8DrJIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Z8DrJYHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput.reasonRiskCentral" content="cifinRiskCenterStudyInput?.reasonRiskCentral" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z8DrJoHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_Z8DrJ4HJEe6r_6YB-6bR9g" type="JAVA_METHOD" expression="setReasonRiskCentral">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_1HX3woHHEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_1HX3w4HHEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_1HX3xIHHEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_1HX3xoHHEe6r_6YB-6bR9g" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_1HX3xYHHEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_1HX3yIHHEe6r_6YB-6bR9g">
+            <targetForm xmi:type="expression:Expression" xmi:id="_xKiucIHKEe6r_6YB-6bR9g" name="riskCentralsStudy" content="48192d28-06c1-4e84-989e-1514f1b29b86" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          </formMapping>
+          <contract xmi:type="process:Contract" xmi:id="_1HX3x4HHEe6r_6YB-6bR9g">
+            <inputs xmi:type="process:ContractInput" xmi:id="_Y9i0YIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudyInput" type="COMPLEX" dataReference="datacreditoRiskCenterStudy" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_Y9jbcIHJEe6r_6YB-6bR9g" name="nameRiskCentral" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Y9jbcYHJEe6r_6YB-6bR9g" name="qualificationRiskCentral" type="INTEGER" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Y9jbcoHJEe6r_6YB-6bR9g" name="statusRiskCentral" type="BOOLEAN" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Y9jbc4HJEe6r_6YB-6bR9g" name="reasonRiskCentral" createMode="false"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_Z8AAsIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudyInput" type="COMPLEX" dataReference="cifinRiskCenterStudy" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z8AnwIHJEe6r_6YB-6bR9g" name="nameRiskCentral" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z8AnwYHJEe6r_6YB-6bR9g" name="qualificationRiskCentral" type="INTEGER" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z8AnwoHJEe6r_6YB-6bR9g" name="statusRiskCentral" type="BOOLEAN" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_Z8Anw4HJEe6r_6YB-6bR9g" name="reasonRiskCentral" createMode="false"/>
+            </inputs>
+          </contract>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="_1HZF4IHHEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="_Gp-y4IHIEe6r_6YB-6bR9g" name="Puntaje suficiente?" outgoing="_afBDoIHIEe6r_6YB-6bR9g _bd0OMIHIEe6r_6YB-6bR9g" incoming="_GHHWYIHIEe6r_6YB-6bR9g">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_GGxYIIHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_GGwxEIHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_GGxYIYHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:ServiceTask" xmi:id="_HeR9oIHIEe6r_6YB-6bR9g" documentation="se envía un correo electrónico al cliente notificando el resultado y que ha sido rechazada la solicitud." name="Envío correo Rechazo centrales de riesgo" outgoing="_ePN-0IHIEe6r_6YB-6bR9g" incoming="_afBDoIHIEe6r_6YB-6bR9g">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_HeR9oYHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_HeR9ooHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_HeR9o4HIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_HeR9pIHIEe6r_6YB-6bR9g" documentation="Envía un correo por no alcanzar el puntaje en las centrales de riesgo" name="Failed risk centrals validation" definitionId="email" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_HeR9pYHIEe6r_6YB-6bR9g" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9poHIEe6r_6YB-6bR9g" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9p4HIEe6r_6YB-6bR9g" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9qIHIEe6r_6YB-6bR9g" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9qYHIEe6r_6YB-6bR9g" name="25" content="25" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9qoHIEe6r_6YB-6bR9g" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9q4HIEe6r_6YB-6bR9g" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9rIHIEe6r_6YB-6bR9g" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9rYHIEe6r_6YB-6bR9g" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9roHIEe6r_6YB-6bR9g" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9r4HIEe6r_6YB-6bR9g" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9sIHIEe6r_6YB-6bR9g" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9sYHIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9soHIEe6r_6YB-6bR9g" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9s4HIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9tIHIEe6r_6YB-6bR9g" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9tYHIEe6r_6YB-6bR9g" name="bank@konradlorenz.edu.co" content="bank@konradlorenz.edu.co" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9toHIEe6r_6YB-6bR9g" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9t4HIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9uIHIEe6r_6YB-6bR9g" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_HeR9uYHIEe6r_6YB-6bR9g" name="michaela.velascoa@konradlorenz.edu.co" content="michaela.velascoa@konradlorenz.edu.co" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeR9uoHIEe6r_6YB-6bR9g" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSksIHIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSksYHIEe6r_6YB-6bR9g" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSksoHIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSks4HIEe6r_6YB-6bR9g" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSktIHIEe6r_6YB-6bR9g" name="Bank Konrad Info - Validación centrales de riesgo fallida!" content="Bank Konrad Info - Validación centrales de riesgo fallida!" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSktYHIEe6r_6YB-6bR9g" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSktoHIEe6r_6YB-6bR9g" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSkt4HIEe6r_6YB-6bR9g" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSkuIHIEe6r_6YB-6bR9g" name="&lt;pattern-expression>" content="&lt;p>Hola&lt;br />&#xA;&lt;br />&#xA;Te informamos que debido al estudio en centrales de riesgo se determin&amp;oacute; que la solicitud queda rechazada.&lt;/p>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;p>ATT. Bank Konrad&lt;/p>&#xA;" type="TYPE_PATTERN" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSkuYHIEe6r_6YB-6bR9g" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_HeSkuoHIEe6r_6YB-6bR9g"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSku4HIEe6r_6YB-6bR9g" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSkvIHIEe6r_6YB-6bR9g" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSkvYHIEe6r_6YB-6bR9g" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_HeSkvoHIEe6r_6YB-6bR9g" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_HeSkv4HIEe6r_6YB-6bR9g" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_HeSkwIHIEe6r_6YB-6bR9g"/>
+              </parameters>
+            </configuration>
+          </connectors>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_HeSkwYHIEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_HeSkwoHIEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_HeSkw4HIEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_HeSkxIHIEe6r_6YB-6bR9g" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_HeSkxYHIEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_eO7D4IHIEe6r_6YB-6bR9g" name="End4" incoming="_ePN-0IHIEe6r_6YB-6bR9g">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_ePE04IHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_ePEN0IHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_ePE04YHIEe6r_6YB-6bR9g" name="" content="" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_6UuCwGxEEe6LhMIMQ2gwew" name="abogado" actor="_43ewQGxmEe6rfr51zcw3AQ">
-        <elements xmi:type="process:EndEvent" xmi:id="_bRcFsHdtEe6erpAD8mPVsg" name="End3" incoming="_bRw10HdtEe6erpAD8mPVsg">
+        <elements xmi:type="process:EndEvent" xmi:id="_bRcFsHdtEe6erpAD8mPVsg" name="End3" incoming="_bd0OMIHIEe6r_6YB-6bR9g">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_bRkokXdtEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_bRkokHdtEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_bRkokndtEe6erpAD8mPVsg" name="" content="" returnTypeFixed="true"/>
@@ -501,6 +698,12 @@
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_vOJzIHdqEe6erpAD8mPVsg" name="internalStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.InternalStudy">
         <defaultValue xmi:type="expression:Expression" xmi:id="_vOKaMHdqEe6erpAD8mPVsg" name="init_internalStudy()" content="def businessObjectVar = new com.company.model.InternalStudy();&#xA;&#xA;businessObjectVar.internalStatus = false;&#xA;businessObjectVar.reason = &quot;Sin Comentarios.&quot;&#xA;&#xA;return businessObjectVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.InternalStudy"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_2TcM0IHIEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_2Tcz4IHIEe6r_6YB-6bR9g" name="init_datacreditoRiskCenterStudy()" content="def businessObjectVar = new com.company.model.RiskCenterStudy();&#xA;&#xA;businessObjectVar.nameRiskCentral = &quot;Datacédito&quot;&#xA;businessObjectVar.qualificationRiskCentral = 0&#xA;businessObjectVar.statusRiskCentral = null;&#xA;businessObjectVar.reasonRiskCentral = &quot;Sin Comentarios.&quot;&#xA;&#xA;return businessObjectVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.RiskCenterStudy"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_Tbwm0IHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_Tbx08IHJEe6r_6YB-6bR9g" name="init_cifinRiskCenterStudy()" content="def businessObjectVar = new com.company.model.RiskCenterStudy();&#xA;&#xA;businessObjectVar.nameRiskCentral = &quot;CIFIN&quot;&#xA;businessObjectVar.qualificationRiskCentral = 0&#xA;businessObjectVar.statusRiskCentral = null;&#xA;businessObjectVar.reasonRiskCentral = &quot;Sin Comentarios.&quot;&#xA;&#xA;return businessObjectVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.RiskCenterStudy"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_fhiJo2xDEe6LhMIMQ2gwew">
         <targetForm xmi:type="expression:Expression" xmi:id="_ewvV4nEREe6pX-8tUtH-xQ" name="ApplicationRegistration" content="066e8a46-d47a-4a92-a5ee-776bda2c0b73" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -552,11 +755,30 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6DFqcHdsEe6erpAD8mPVsg"/>
         <condition xmi:type="expression:Expression" xmi:id="_6DGRgHdsEe6erpAD8mPVsg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_bRw10HdtEe6erpAD8mPVsg" name="Aprobado" target="_bRcFsHdtEe6erpAD8mPVsg" source="_gDlmEHdtEe6erpAD8mPVsg">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_bRw10HdtEe6erpAD8mPVsg" name="Aprobado" target="_1HE80IHHEe6r_6YB-6bR9g" source="_gDlmEHdtEe6erpAD8mPVsg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_bRxc4HdtEe6erpAD8mPVsg"/>
         <condition xmi:type="expression:Expression" xmi:id="_bRxc4XdtEe6erpAD8mPVsg" name="newScript()" content="return internalStudy?.internalStatus === true;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
           <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_qk5osHdtEe6erpAD8mPVsg" name="internalStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.InternalStudy"/>
         </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_GHHWYIHIEe6r_6YB-6bR9g" target="_Gp-y4IHIEe6r_6YB-6bR9g" source="_1HE80IHHEe6r_6YB-6bR9g">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_GHJLkIHIEe6r_6YB-6bR9g"/>
+        <condition xmi:type="expression:Expression" xmi:id="_GHJLkYHIEe6r_6YB-6bR9g" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_afBDoIHIEe6r_6YB-6bR9g" name="Rechazado" target="_HeR9oIHIEe6r_6YB-6bR9g" source="_Gp-y4IHIEe6r_6YB-6bR9g" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_afFVEIHIEe6r_6YB-6bR9g"/>
+        <condition xmi:type="expression:Expression" xmi:id="_afGjMIHIEe6r_6YB-6bR9g" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_bd0OMIHIEe6r_6YB-6bR9g" name="Aprobado" target="_bRcFsHdtEe6erpAD8mPVsg" source="_Gp-y4IHIEe6r_6YB-6bR9g">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_bd4foIHIEe6r_6YB-6bR9g"/>
+        <condition xmi:type="expression:Expression" xmi:id="_bd5GsIHIEe6r_6YB-6bR9g" name="newScript()" content="return (&#xA;&#x9;(cifinRiskCenterStudy.qualificationRiskCentral + datacreditoRiskCenterStudy.qualificationRiskCentral)/2&#xA;) > 60" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_pOeFMIHJEe6r_6YB-6bR9g" name="cifinRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_pOf6YIHJEe6r_6YB-6bR9g" name="datacreditoRiskCenterStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskCenterStudy"/>
+        </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_ePN-0IHIEe6r_6YB-6bR9g" target="_eO7D4IHIEe6r_6YB-6bR9g" source="_HeR9oIHIEe6r_6YB-6bR9g">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ePOl4IHIEe6r_6YB-6bR9g"/>
+        <condition xmi:type="expression:Expression" xmi:id="_ePOl4YHIEe6r_6YB-6bR9g" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_fhiJqmxDEe6LhMIMQ2gwew" name="Office Advisor" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_sohgEGxmEe6rfr51zcw3AQ" name="Risk analyst"/>
@@ -727,12 +949,32 @@
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gDuI8XdtEe6erpAD8mPVsg" x="300" y="32" width="43" height="43"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_1HmhQIHHEe6r_6YB-6bR9g" type="3005" element="_1HE80IHHEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_1HsA0IHHEe6r_6YB-6bR9g" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1HnIUIHHEe6r_6YB-6bR9g" x="273" y="130" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_GqAoEIHIEe6r_6YB-6bR9g" type="3008" element="_Gp-y4IHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_GqBPIIHIEe6r_6YB-6bR9g" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_GqBPIYHIEe6r_6YB-6bR9g" y="-53"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqAoEYHIEe6r_6YB-6bR9g" x="476" y="139" width="43" height="43"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_HeVA8IHIEe6r_6YB-6bR9g" type="3027" element="_HeR9oIHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_HeVA8YHIEe6r_6YB-6bR9g" type="5017" element="_HeR9oIHIEe6r_6YB-6bR9g"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HeVA8oHIEe6r_6YB-6bR9g" x="595" y="131" width="111" height="56"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_ePJGUIHIEe6r_6YB-6bR9g" type="3003" element="_eO7D4IHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_ePK7gIHIEe6r_6YB-6bR9g" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ePK7gYHIEe6r_6YB-6bR9g" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ePJGUYHIEe6r_6YB-6bR9g" x="782" y="146"/>
+            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_VQx2AGxEEe6LhMIMQ2gwew"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_VQx2AWxEEe6LhMIMQ2gwew" fontName=".AppleSystemUIFont"/>
           <styles xmi:type="notation:LineStyle" xmi:id="_VQx2AmxEEe6LhMIMQ2gwew"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_VQ2HcWxEEe6LhMIMQ2gwew"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQx2A2xEEe6LhMIMQ2gwew" x="44" y="274" width="821" height="135"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQx2A2xEEe6LhMIMQ2gwew" x="44" y="246" width="821" height="260"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_6U3MsGxEEe6LhMIMQ2gwew" type="3007" element="_6UuCwGxEEe6LhMIMQ2gwew">
           <children xmi:type="notation:DecorationNode" xmi:id="_6U6QAGxEEe6LhMIMQ2gwew" type="5007"/>
@@ -741,7 +983,7 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_bRskYHdtEe6erpAD8mPVsg" type="5025">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_bRtLcHdtEe6erpAD8mPVsg" y="5"/>
               </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bRphEXdtEe6erpAD8mPVsg" x="308" y="30"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bRphEXdtEe6erpAD8mPVsg" x="483" y="30"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_6U3MsWxEEe6LhMIMQ2gwew"/>
@@ -782,7 +1024,7 @@
       <styles xmi:type="notation:FontStyle" xmi:id="_fhiwtWxDEe6LhMIMQ2gwew" fontName=".AppleSystemUIFont"/>
       <styles xmi:type="notation:LineStyle" xmi:id="_fhiwtmxDEe6LhMIMQ2gwew"/>
       <styles xmi:type="notation:FillStyle" xmi:id="_fhiwt2xDEe6LhMIMQ2gwew"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fhiwuGxDEe6LhMIMQ2gwew" width="840" height="250"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fhiwuGxDEe6LhMIMQ2gwew" width="925" height="316"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_fhiwuWxDEe6LhMIMQ2gwew"/>
     <edges xmi:type="notation:Connector" xmi:id="_1xB6kG4EEe606p7FAzRilw" type="4001" element="_1xAscG4EEe606p7FAzRilw" source="_fhiwq2xDEe6LhMIMQ2gwew" target="_3MDHEG4EEe606p7FAzRilw" roundedBendpointsRadius="10" routing="Rectilinear">
@@ -862,12 +1104,43 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6DONUndsEe6erpAD8mPVsg" points="[0, -5, -83, -3]$[79, -17, -4, -15]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6DbBoHdsEe6erpAD8mPVsg" id="(1.0,0.56)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_bRyrAHdtEe6erpAD8mPVsg" type="4001" element="_bRw10HdtEe6erpAD8mPVsg" source="_gDuI8HdtEe6erpAD8mPVsg" target="_bRphEHdtEe6erpAD8mPVsg" roundedBendpointsRadius="10" routing="Rectilinear">
+    <edges xmi:type="notation:Connector" xmi:id="_bRyrAHdtEe6erpAD8mPVsg" type="4001" element="_bRw10HdtEe6erpAD8mPVsg" source="_gDuI8HdtEe6erpAD8mPVsg" target="_1HmhQIHHEe6r_6YB-6bR9g" roundedBendpointsRadius="10" routing="Rectilinear">
       <children xmi:type="notation:DecorationNode" xmi:id="_bR1HQHdtEe6erpAD8mPVsg" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_bR1HQXdtEe6erpAD8mPVsg" x="-31" y="-28"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_bR1HQXdtEe6erpAD8mPVsg" x="-23" y="-28"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_bRyrAXdtEe6erpAD8mPVsg" fontName=".AppleSystemUIFont"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRyrAndtEe6erpAD8mPVsg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bRyrAndtEe6erpAD8mPVsg" points="[0, 22, 35, -97]$[0, 77, 35, -42]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_18aCUIHHEe6r_6YB-6bR9g" id="(0.11,0.7)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_GHQgUIHIEe6r_6YB-6bR9g" type="4001" element="_GHHWYIHIEe6r_6YB-6bR9g" source="_1HmhQIHHEe6r_6YB-6bR9g" target="_GqAoEIHIEe6r_6YB-6bR9g" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GHTjoIHIEe6r_6YB-6bR9g" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GHTjoYHIEe6r_6YB-6bR9g" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_GHRucIHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GHRucYHIEe6r_6YB-6bR9g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_afI_cIHIEe6r_6YB-6bR9g" type="4001" element="_afBDoIHIEe6r_6YB-6bR9g" source="_GqAoEIHIEe6r_6YB-6bR9g" target="_HeVA8IHIEe6r_6YB-6bR9g" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_afLbsIHIEe6r_6YB-6bR9g" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_afMp0IHIEe6r_6YB-6bR9g" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_afJmgIHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_afKNkIHIEe6r_6YB-6bR9g" points="[0, -6, -146, -6]$[76, -6, -70, -6]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_afTXgIHIEe6r_6YB-6bR9g" id="(1.0,0.627906976744186)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_beb5QIHIEe6r_6YB-6bR9g" type="4001" element="_bd0OMIHIEe6r_6YB-6bR9g" source="_GqAoEIHIEe6r_6YB-6bR9g" target="_bRphEHdtEe6erpAD8mPVsg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_bedHYIHIEe6r_6YB-6bR9g" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_beducIHIEe6r_6YB-6bR9g" x="-41" y="-28"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_becgUIHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_becgUYHIEe6r_6YB-6bR9g" points="[-34, -2, 162, -136]$[-201, 119, -5, -15]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_beim8IHIEe6r_6YB-6bR9g" id="(1.0,0.7441860465116279)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ePPM8IHIEe6r_6YB-6bR9g" type="4001" element="_ePN-0IHIEe6r_6YB-6bR9g" source="_HeVA8IHIEe6r_6YB-6bR9g" target="_ePJGUIHIEe6r_6YB-6bR9g" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ePP0AoHIEe6r_6YB-6bR9g" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ePP0A4HIEe6r_6YB-6bR9g" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ePP0AIHIEe6r_6YB-6bR9g" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ePP0AYHIEe6r_6YB-6bR9g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
