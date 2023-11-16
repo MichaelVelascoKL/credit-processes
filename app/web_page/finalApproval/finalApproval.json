@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "e3e0f412-a2ee-4d6f-a173-4daabcb1a4e9",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1699891410073,
+  "lastUpdate" : 1700168068266,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -116,7 +116,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "9eb8040b-6948-46e7-8ebe-00908403e2d9",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
@@ -130,47 +139,6 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "level" : {
-                    "type" : "constant",
-                    "value" : "Level 4"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "Final Approval"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "1596ff49-294a-4f80-b8e6-b0d4e2fa053f",
-                "hasValidationError" : false,
-                "id" : "pbTitle",
-                "description" : ""
-              }
-            ],
             [
               {
                 "type" : "container",
@@ -237,10 +205,11 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Reason Approval"
+                          "value" : "Motivo"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Motivo por el cual se toma la desición de aprobar o rechazar"
                         },
                         "type" : {
                           "type" : "constant",
@@ -299,8 +268,8 @@
                 "type" : "component",
                 "dimension" : {
                   "md" : 6,
-                  "sm" : 12,
-                  "xs" : 12,
+                  "sm" : 6,
+                  "xs" : 6,
                   "lg" : 6
                 },
                 "propertyValues" : {
@@ -362,7 +331,7 @@
                   },
                   "alignment" : {
                     "type" : "constant",
-                    "value" : "right"
+                    "value" : "center"
                   },
                   "dimension" : {
                     "type" : "constant",
@@ -398,8 +367,8 @@
               {
                 "type" : "component",
                 "dimension" : {
-                  "xs" : 12,
-                  "sm" : 12,
+                  "xs" : 6,
+                  "sm" : 6,
                   "md" : 6,
                   "lg" : 6
                 },
@@ -426,7 +395,7 @@
                   },
                   "alignment" : {
                     "type" : "constant",
-                    "value" : "left"
+                    "value" : "center"
                   },
                   "buttonStyle" : {
                     "type" : "constant",

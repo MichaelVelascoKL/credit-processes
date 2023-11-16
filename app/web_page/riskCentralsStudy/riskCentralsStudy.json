@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "48192d28-06c1-4e84-989e-1514f1b29b86",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1699843050006,
+  "lastUpdate" : 1700170972279,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -143,7 +143,7 @@
               {
                 "type" : "component",
                 "dimension" : {
-                  "md" : 6,
+                  "md" : 12,
                   "sm" : 12,
                   "xs" : 12,
                   "lg" : 6
@@ -163,7 +163,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Datacredito Risk Center Study: {{datacreditoStatus}}"
+                    "value" : "Estudio de Riesgo Datacrédito: {{datacreditoStatus}}"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -219,7 +219,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 6,
-                        "sm" : 12,
+                        "sm" : 6,
                         "xs" : 12,
                         "lg" : 6
                       },
@@ -250,7 +250,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Name Risk Central"
+                          "value" : "Nombre de la central de Reisgo"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -307,7 +307,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 6,
-                        "sm" : 12,
+                        "sm" : 6,
                         "xs" : 12,
                         "lg" : 6
                       },
@@ -338,7 +338,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Qualification Risk Central"
+                          "value" : "Calificación"
                         },
                         "placeholder" : {
                           "type" : "constant",
@@ -431,10 +431,11 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Reason Risk Central"
+                          "value" : "Motivo"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Motivo por el cual se da la calificación"
                         },
                         "type" : {
                           "type" : "constant",
@@ -490,36 +491,6 @@
             ],
             [
               {
-                "type" : "container",
-                "dimension" : {
-                  "xs" : 12,
-                  "sm" : 12,
-                  "md" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "repeatedCollection" : {
-                    "type" : "variable"
-                  }
-                },
-                "reference" : "2af24bd1-974d-4418-89c9-1d37b3ab8d37",
-                "hasValidationError" : false,
-                "id" : "pbContainer",
-                "rows" : [
-                  [ ]
-                ]
-              }
-            ],
-            [
-              {
                 "type" : "component",
                 "dimension" : {
                   "md" : 12,
@@ -542,7 +513,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Cifin Risk Center Study: {{cifinStatus}}"
+                    "value" : "Estudio de Riesgo CIFIN: {{cifinStatus}}"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -598,7 +569,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 6,
-                        "sm" : 12,
+                        "sm" : 6,
                         "xs" : 12,
                         "lg" : 6
                       },
@@ -629,7 +600,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Name Risk Central"
+                          "value" : "Nombre de la central de Reisgo"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -686,7 +657,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 6,
-                        "sm" : 12,
+                        "sm" : 6,
                         "xs" : 12,
                         "lg" : 6
                       },
@@ -717,7 +688,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Qualification Risk Central"
+                          "value" : "Calificación"
                         },
                         "placeholder" : {
                           "type" : "constant",
@@ -810,10 +781,11 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Reason Risk Central"
+                          "value" : "Motivo"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Motivo por el cual se da la calificación"
                         },
                         "type" : {
                           "type" : "constant",
@@ -894,7 +866,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Enviar calificaciones"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -1013,6 +985,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "a52ce6b7-9224-4ddd-98a3-eec0d411f99e",

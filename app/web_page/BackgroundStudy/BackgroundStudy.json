@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "39824af6-c88f-4043-a7f5-2f55bfe540a1",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1699890286560,
+  "lastUpdate" : 1700167954388,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -116,7 +116,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "8e73b56b-a26d-4893-aeac-0f607af4b80a",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
@@ -154,7 +163,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Background Study: {{formOutput.backgroundStudyInput.statusBackStudy}}"
+                    "value" : "Estudio de Antecedentes: {{successReject}}"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -210,7 +219,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 6,
-                        "sm" : 12,
+                        "sm" : 6,
                         "xs" : 12,
                         "lg" : 6
                       },
@@ -241,7 +250,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Entity Back Study"
+                          "value" : "Entidad"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -298,7 +307,7 @@
                       "type" : "component",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 6,
                         "md" : 6,
                         "lg" : 6
                       },
@@ -402,10 +411,11 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Reason Back Study"
+                          "value" : "Motivo"
                         },
                         "placeholder" : {
-                          "type" : "constant"
+                          "type" : "constant",
+                          "value" : "Comentarios adicionales"
                         },
                         "type" : {
                           "type" : "constant",
@@ -486,7 +496,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Enviar"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -532,6 +542,27 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable"
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable"
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "8b7a6a37-532a-486a-8077-04ca85db2fdd",
@@ -662,6 +693,13 @@
       "type" : "constant",
       "value" : [
         ""
+      ],
+      "exposed" : false
+    },
+    "successReject" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.yesNoStatus === \"No\" ? \"Aprobado\" : \"Rechazado\";"
       ],
       "exposed" : false
     }

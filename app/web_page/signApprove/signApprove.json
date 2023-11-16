@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "c8187368-ef2e-4a85-be31-0fd9a3dd7db1",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1699899674665,
+  "lastUpdate" : 1700170375356,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -116,7 +116,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "062b03c0-f083-49a1-a77d-617042ecccd9",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
@@ -130,47 +139,6 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "level" : {
-                    "type" : "constant",
-                    "value" : "Level 4"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "Sign Promissory Note"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "3cee2ed4-0eb6-4eec-af5a-fff1600f4196",
-                "hasValidationError" : false,
-                "id" : "pbTitle",
-                "description" : ""
-              }
-            ],
             [
               {
                 "type" : "container",
@@ -237,11 +205,11 @@
                         },
                         "readOnly" : {
                           "type" : "constant",
-                          "value" : true
+                          "value" : false
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Date Time Promissory Note"
+                          "value" : "Fecha de agendamiento para la firma del pagaré con el cliente"
                         },
                         "type" : {
                           "type" : "constant"
@@ -341,7 +309,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Number Promissory Note"
+                          "value" : "Número de pagaré"
                         },
                         "placeholder" : {
                           "type" : "constant"
@@ -403,7 +371,7 @@
                 "type" : "component",
                 "dimension" : {
                   "md" : 6,
-                  "sm" : 12,
+                  "sm" : 6,
                   "xs" : 12,
                   "lg" : 6
                 },
@@ -425,7 +393,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Firmar"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -466,7 +434,7 @@
                   },
                   "alignment" : {
                     "type" : "constant",
-                    "value" : "right"
+                    "value" : "center"
                   },
                   "dimension" : {
                     "type" : "constant",
@@ -503,7 +471,7 @@
                 "type" : "component",
                 "dimension" : {
                   "xs" : 12,
-                  "sm" : 12,
+                  "sm" : 6,
                   "md" : 6,
                   "lg" : 6
                 },
@@ -526,11 +494,11 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Solicitar Reagendamiento"
                   },
                   "alignment" : {
                     "type" : "constant",
-                    "value" : "left"
+                    "value" : "center"
                   },
                   "buttonStyle" : {
                     "type" : "constant",
@@ -636,6 +604,14 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
                   }
                 },
                 "reference" : "6c7b21bc-2a99-4a4c-986b-010dfae042ad",
