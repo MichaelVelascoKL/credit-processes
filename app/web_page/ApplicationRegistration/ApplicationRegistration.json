@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "066e8a46-d47a-4a92-a5ee-776bda2c0b73",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1698354057536,
+  "lastUpdate" : 1700164723502,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -116,7 +116,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -144,7 +144,7 @@
                       "type" : "component",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 10,
                         "md" : 10,
                         "lg" : 4
                       },
@@ -214,7 +214,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -244,7 +244,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -261,7 +261,7 @@
                           "type" : "variable"
                         }
                       },
-                      "reference" : "6a771637-a071-4082-a3c7-bcb4a3b56206",
+                      "reference" : "6b1d2848-dc0b-4a95-9147-e5bd29664545",
                       "hasValidationError" : false,
                       "id" : "pbContainer",
                       "rows" : [
@@ -272,7 +272,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -361,7 +361,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -391,7 +391,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -419,7 +419,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -508,7 +508,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -538,7 +538,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -566,7 +566,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -655,7 +655,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -685,7 +685,149 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
+                        "md" : 1,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable"
+                        }
+                      },
+                      "reference" : "041e8c17-97fa-4aa6-a78f-824bdb8ba10f",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [
+                        [ ]
+                      ]
+                    },
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 10,
+                        "md" : 10,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : 1
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Correo Electrónico"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation",
+                          "value" : "Correo Electrónico"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.businessObjectInput.email"
+                        },
+                        "debounce" : {
+                          "type" : "constant",
+                          "value" : 0
+                        },
+                        "type" : {
+                          "type" : "constant",
+                          "value" : "text"
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
+                        }
+                      },
+                      "reference" : "981b4d8d-dfe0-4c6b-a195-8f5532abd0cb",
+                      "hasValidationError" : false,
+                      "id" : "pbInput"
+                    },
+                    {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 1,
+                        "md" : 1,
+                        "lg" : 4
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable"
+                        }
+                      },
+                      "reference" : "f8373c41-162f-4ce3-8163-3cffaded7328",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [
+                        [ ]
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -713,7 +855,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -803,7 +945,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -833,7 +975,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -861,7 +1003,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -951,7 +1093,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -981,7 +1123,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -1009,7 +1151,7 @@
                       "type" : "component",
                       "dimension" : {
                         "md" : 10,
-                        "sm" : 12,
+                        "sm" : 10,
                         "xs" : 12,
                         "lg" : 4
                       },
@@ -1099,7 +1241,7 @@
                       "type" : "container",
                       "dimension" : {
                         "xs" : 12,
-                        "sm" : 12,
+                        "sm" : 1,
                         "md" : 1,
                         "lg" : 4
                       },
@@ -1298,7 +1440,8 @@
         "    \"lastName\" : \"\",",
         "    \"amountRequested\" : 0,",
         "    \"totalIncome\" : 0,",
-        "    \"fixedExpenses\" : 0",
+        "    \"fixedExpenses\" : 0,",
+        "    \"email\": \"\"",
         "  }",
         "}"
       ],

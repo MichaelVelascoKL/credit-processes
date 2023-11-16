@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "b5666709-5f11-4193-83e6-919df3e93086",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1698361466358,
+  "lastUpdate" : 1700164361721,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -567,6 +567,148 @@
                 }
               },
               "reference" : "fe8c896a-7585-46ec-8683-999543f5a6f7",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 1,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable"
+                }
+              },
+              "reference" : "4a32e65b-927a-4471-b388-9a477f6c4650",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 10,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "required" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "minLength" : {
+                  "type" : "constant",
+                  "value" : 1
+                },
+                "maxLength" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "readOnly" : {
+                  "type" : "expression",
+                  "value" : "enabledDisabled"
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Correo Electrónico"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "placeholder" : {
+                  "type" : "interpolation",
+                  "value" : "Correo Electrónico"
+                },
+                "value" : {
+                  "type" : "variable",
+                  "value" : "businessObject.email"
+                },
+                "debounce" : {
+                  "type" : "constant",
+                  "value" : 0
+                },
+                "type" : {
+                  "type" : "constant",
+                  "value" : "text"
+                },
+                "min" : {
+                  "type" : "constant"
+                },
+                "max" : {
+                  "type" : "constant"
+                },
+                "step" : {
+                  "type" : "constant",
+                  "value" : 1
+                }
+              },
+              "reference" : "3dabb8f8-380d-4016-a5ad-fde7d84ca220",
+              "hasValidationError" : false,
+              "id" : "pbInput"
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 1,
+                "lg" : 4
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable"
+                }
+              },
+              "reference" : "fa4ea22a-1a24-494c-a157-3af315a31d5a",
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
@@ -2025,7 +2167,8 @@
         "\t\t\tamountRequested: $data.businessObject.amountRequested !== undefined ? $data.businessObject.amountRequested : null,",
         "\t\t\ttotalIncome: $data.businessObject.totalIncome !== undefined ? $data.businessObject.totalIncome : null,",
         "\t\t\tfixedExpenses: $data.businessObject.fixedExpenses !== undefined ? $data.businessObject.fixedExpenses : null,",
-        "\t\t\tvalidFiles: $data.businessObject.ValidFiles !== undefined ? $data.businessObject.ValidFiles : null",
+        "\t\t\tvalidFiles: $data.businessObject.ValidFiles !== undefined ? $data.businessObject.ValidFiles : null,",
+        "\t\t\temail: $data.businessObject.email != undefined ? $data.businessObject.email : null",
         "\t\t}",
         "\t}",
         "}"
