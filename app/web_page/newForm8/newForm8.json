@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "94d4de04-71f4-4b79-98af-1bed00d0b875",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1700178574450,
+  "lastUpdate" : 1700180082631,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -106,7 +106,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "{{ task.displayDescription }} Si no desea disminuir el monto y cancelar la solicitud deje el campo en 0"
+                  "value" : "{{ task.displayDescription }}"
                 },
                 "alignment" : {
                   "type" : "constant",
@@ -275,7 +275,8 @@
                           "value" : 0
                         },
                         "max" : {
-                          "type" : "constant"
+                          "type" : "expression",
+                          "value" : "maxValue"
                         },
                         "step" : {
                           "type" : "constant",
@@ -520,6 +521,13 @@
         "\t\t}",
         "\t}",
         "}"
+      ],
+      "exposed" : false
+    },
+    "maxValue" : {
+      "type" : "expression",
+      "value" : [
+        "return ((($data.businessObject.totalIncome-$data.businessObject.fixedExpenses)*0.35))"
       ],
       "exposed" : false
     }

@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "c5a1d0a1-950d-4dbf-b96a-c1ea9153e9c6",
   "modelVersion" : "2.4",
-  "lastUpdate" : 1700167572317,
+  "lastUpdate" : 1700180208607,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -876,7 +876,7 @@
     "debtCapacityStatus" : {
       "type" : "expression",
       "value" : [
-        "return $data.debtCapaciryAmount > $data.businessObject.amountRequested"
+        "return $data.debtCapaciryAmount >= $data.businessObject.amountRequested"
       ],
       "exposed" : false
     }

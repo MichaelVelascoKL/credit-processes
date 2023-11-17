@@ -66,8 +66,12 @@
         </elements>
         <elements xmi:type="process:Task" xmi:id="_-eTSAITUEe6dH7rEsUpV3g" name="Disminución de Monto Solicitado" outgoing="_XYHEMITVEe6dH7rEsUpV3g" incoming="_RlRkUIHfEe6yYs2-jPbbgQ" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_-eeRIITUEe6dH7rEsUpV3g" name="" content="" returnTypeFixed="true"/>
-          <dynamicDescription xmi:type="expression:Expression" xmi:id="_-edDAITUEe6dH7rEsUpV3g" name="" content="" returnTypeFixed="true"/>
-          <stepSummary xmi:type="expression:Expression" xmi:id="_-eeRIYTUEe6dH7rEsUpV3g" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_-edDAITUEe6dH7rEsUpV3g" name="dynamicDescription()" content="return &quot;Recuerde que según el cálculo de endeudamiento, el máximo monto que puede solicitar es: &quot;+(((businessObject.totalIncome-businessObject.fixedExpenses)*0.35))+&quot;. Si desea cancelar la solicitud del prestamo deje el campo con valor 0&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_WD0bsITeEe6dH7rEsUpV3g" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+          </dynamicDescription>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_-eeRIYTUEe6dH7rEsUpV3g" name="descriptionAfterCompletion()" content="return businessObject.amountRequested > 0 ? &quot;Monto disminuido a: &quot;+businessObject.amountRequested : &quot;Proceso Finalizado por el cliente&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="__i1QIITfEe6dH7rEsUpV3g" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
+          </stepSummary>
           <operations xmi:type="expression:Operation" xmi:id="_rpZzIITVEe6dH7rEsUpV3g">
             <leftOperand xmi:type="expression:Expression" xmi:id="_rpbBQITVEe6dH7rEsUpV3g" name="businessObject" content="businessObject" type="TYPE_VARIABLE" returnType="com.company.model.BusinessObject">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rpbBQYTVEe6dH7rEsUpV3g" documentation="Datos de la solicitud del cédito Bancario" name="businessObject" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.BusinessObject"/>
@@ -1662,7 +1666,7 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_Z6v5cHRVEe6NjpAoJmIccw" name="Aprobado" target="_y3OBAHdpEe6erpAD8mPVsg" source="_edEPIHEVEe6pX-8tUtH-xQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Z6xuoHRVEe6NjpAoJmIccw"/>
         <condition xmi:type="expression:Expression" xmi:id="_Z6xuoXRVEe6NjpAoJmIccw" name="newScript()" content="return riskStudy?.riskState === true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
-          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_rdsLwHRVEe6NjpAoJmIccw" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_otuuYITkEe6dH7rEsUpV3g" name="riskStudy" dataType="_fhiwoGxDEe6LhMIMQ2gwew" className="com.company.model.RiskStudy"/>
         </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_yAJHsHdsEe6erpAD8mPVsg" target="_gDlmEHdtEe6erpAD8mPVsg" source="_y3OBAHdpEe6erpAD8mPVsg">
@@ -2041,7 +2045,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_7Q8moIHeEe6yYs2-jPbbgQ" type="3008" element="_7Q3uIIHeEe6yYs2-jPbbgQ" fontName=".AppleSystemUIFont">
               <children xmi:type="notation:DecorationNode" xmi:id="_7Q90wIHeEe6yYs2-jPbbgQ" type="5026">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_7Q90wYHeEe6yYs2-jPbbgQ" x="-66" y="-45"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_7Q90wYHeEe6yYs2-jPbbgQ" x="-78" y="-46"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7Q8moYHeEe6yYs2-jPbbgQ" x="668" y="582" width="43" height="43"/>
             </children>
@@ -2474,7 +2478,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_n2Mh4YJREe6L8Obc2Ggomg" x="-794" y="-31"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_n2KssYJREe6L8Obc2Ggomg" fontName=".AppleSystemUIFont"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n2KssoJREe6L8Obc2Ggomg" points="[-22, 13, 373, -1206]$[-22, 1253, 373, 34]$[-398, 1253, -3, 34]$[-398, 1227, -3, 8]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_n2KssoJREe6L8Obc2Ggomg" points="[-22, 13, 373, -1557]$[-22, 1561, 373, -9]$[-338, 1561, 57, -9]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n2XhAIJREe6L8Obc2Ggomg" id="(1.0,0.6976744186046512)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n2XhAYJREe6L8Obc2Ggomg" id="(0.525,0.8666666666666667)"/>
     </edges>
